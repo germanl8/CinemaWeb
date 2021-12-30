@@ -10,7 +10,10 @@ body{
 
 }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 50cd0764448a804eb37120c20beda56a337cabb8
 .clearfix{
     float: none;
     clear: both;
@@ -23,7 +26,10 @@ body{
 
     background-color: black;
     opacity: 0.7;
+<<<<<<< HEAD
     z-index: 1;
+=======
+>>>>>>> 50cd0764448a804eb37120c20beda56a337cabb8
 }
 
 #nav_header ul li{
@@ -58,7 +64,10 @@ body{
     top: 10px;
     left: 167px;
     height: 30px;
+<<<<<<< HEAD
     z-index: 2;
+=======
+>>>>>>> 50cd0764448a804eb37120c20beda56a337cabb8
 }
 
 #login{
@@ -68,7 +77,11 @@ body{
     margin-left: 30px;
     margin-right: 30px;
     top: 20px;
+<<<<<<< HEAD
     font-size: 14px;
+=======
+    font-size: 16px;
+>>>>>>> 50cd0764448a804eb37120c20beda56a337cabb8
 }
 
 #active{
@@ -78,16 +91,23 @@ body{
     margin-left: 30px;
     margin-right: 30px;
     top: 20px;
+<<<<<<< HEAD
     font-size: 14px;
+=======
+    font-size: 16px;
+>>>>>>> 50cd0764448a804eb37120c20beda56a337cabb8
     
     
 }
 
+<<<<<<< HEAD
 #login:hover,
 #active:hover{
     color: #E91E63;
 }
 
+=======
+>>>>>>> 50cd0764448a804eb37120c20beda56a337cabb8
 
 .bar{
     position: relative;
@@ -99,11 +119,15 @@ body{
     margin: 2px 25%;
     width: 30px;
     clear: both;
+<<<<<<< HEAD
     z-index: 2;
+=======
+>>>>>>> 50cd0764448a804eb37120c20beda56a337cabb8
 
 }
 
 
+<<<<<<< HEAD
 .slider-frame{
     position: fixed;
     overflow: hidden;
@@ -244,6 +268,8 @@ body{
     font-weight: bold;
     color: black;
 }
+=======
+>>>>>>> 50cd0764448a804eb37120c20beda56a337cabb8
 
 
 
