@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>CINEMA</title>
+
+        <!--Style css-->
+        <link rel="stylesheet" href="css/style_index.css">
+        <!------Scripts------>
+        <script type="text/javascript" src="js/main.js"></script>
+        <!--jquery-->
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <!--slider-->
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+    
+
+    </head>
+
+    <body>
+
+        <header>
+            <nav>
+                <div id="transparency"></div>
+                <section id="nav_header">
+                    <ul>
+                        <li><a href="">
+                            <span class="bar"></span>
+                            <span class="bar"></span>
+                            <span class="bar"></span>
+                        </a></li>
+                        <li><a id="cinem" href="#">cinem</a></li>
+                        <li><img class="logo" src="/img/logo.png"></li>
+                        <li><a id="login" href="">Iniciar sesión</a></li>
+                        <li><a id="active" href="">Activar cuenta</a></li>
+
+                    </ul>
+                    
+                </section>
+
+            </nav>
+            
+
+
+        </header>
+
+        <!--Slider-->
+        <div class="slider-frame">
+            <div class="slide-images">
+                <div class="img-container">
+                    <img src="img/movie1.png" alt="">
+                </div>
+                <div class="img-container">
+                    <img src="img/movie2.png" alt="">
+                </div>
+                <div class="img-container">
+                    <img src="img/movie3.png" alt="">
+                </div>
+            </div>
+        </div>
+
+        <!--compras-->
+        <form id="compras">
+            <div id="button">
+                <input type="submit" id="shop" class="btn_compras btn_shop" value="Shop">
+                <input type="submit" id="snacks" class="btn_compras btn_snacks" value="Snacks">
+                <input type="submit" id="entradas" class="btn_compras btn_entradas" value="Entradas">
+            </div>
+        </form>
+
+        <form action="#" id="formpeliculas">
+
+            <select name="Pelicula" id="addpelicula" class="entradas input_pelicula">  
+                <option value="default">¡Elige tu película!</option>
+                <option value="El rey Leon">El rey León</option>
+                <option value="Avatar">Avatar</option>
+                <option value="Mision Imposible">Mision Imposible</option>
+            </select>
+
+            <br><br>
+
+            <select name="Cine" id="addcine" class="entradas input_cine">
+                <option value="default">¡Elige tu cine!</option>
+                <option value="montevideo">Cinema Montevideo</option>
+                <option value="portones">Cinema Portones</option>
+                <option value="ptacarretas">Cinema Punta Carretas</option>
+            </select>
+
+
+            <br><br>
+
+            <select name="fecha" id="addfecha" class="entradas input_dia">
+                <option value="default">¡Elige el día!</option>
+                <option value="14_12_21">Lunes 14 diciembre</option>
+                <option value="15_12_21">Martes 15 diciembre</option>
+                <option value="16_12_21">Miercoles 16 diciembre</option>
+            </select>
+
+            <br><br>
+
+            <select name="hora" id="addhora" class="entradas input_hora">
+                <option value="default">¡Elige la hora!</option>
+                <option value="1800">18hrs</option>
+                <option value="2000">20hrs</option>
+                <option value="2200">22hrs</option>
+            </select>
+
+
+
+        
+
+
+        
+    </body>
+
+
+</html>
