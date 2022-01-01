@@ -19,12 +19,14 @@ body{
     position: fixed;
     width: 100%;
     height: 50px;
-
     background-color: black;
     opacity: 0.7;
-
     z-index: 1;
 
+}
+
+#nav_header{
+    position: relative;
 }
 
 #nav_header ul li{
@@ -41,7 +43,6 @@ body{
 }
 
 #cinem{
-    display: block;
     position: fixed;
     float: left;
     top: 4px;
@@ -54,7 +55,6 @@ body{
 }
 
 .logo{
-    display: block;
     position: fixed;
     top: 10px;
     left: 167px;
@@ -65,7 +65,7 @@ body{
 }
 
 #login{
-    position: fixed;
+    position: absolute;
     float: right;
     right: 140px;
     margin-left: 30px;
@@ -75,7 +75,7 @@ body{
 }
 
 #active{
-    position: fixed;
+    position: absolute;
     float: right;
     right: 10px;
     margin-left: 30px;
@@ -150,10 +150,10 @@ body{
 }
 
 .btn_compras{
-    display: block;
     position: relative;
     margin-top: 30px;
-    margin-right: 0px;
+    padding-left: 30px;
+    padding-right: 30px;
     right: 15px;
     float: right;
     width: 150px;
@@ -176,10 +176,11 @@ body{
 
 .btn_snacks{
     border-right: none;
+    border-left: none;
 }
 
 .entradas{
-    position: fixed;
+    position: absolute;
     float: right;
     right: 15px;
     width: 450px;
@@ -198,6 +199,7 @@ body{
 .btn_snacks:hover,
 .btn_shop:hover{
     background-color: #be0543;
+    opacity: 0.7;
 }
 
 .input_pelicula{
@@ -222,33 +224,53 @@ body{
 }
 
 .input_cantidad{
-    width: 50px;
-    height: 30px;
-    position: fixed;
-    right: 50px;
-    top: 410px;
+    
+    top: 391px;
+    height: 37.3px;
+    width: 138px;
+    right: 44px;
+    border: none;
+    text-align: center;
+    z-index: 2;
+    border-radius: 0px;
+}
+
+.lbl_cantidad{
+    top: 400px;
+    width: 380px;
+    right: 85px;
+    background: transparent;
+    text-decoration: none;
+    color: white;
+    font-size: 0.8em;
+}
+
+#suma,
+#resta{
+    border: none;
+    background-color: #E91E63;
+    top: 391px;
+    width: 30px;
     font-size: 1em;
-    background-color: white;
+    color: white;
+    height: 37.3px;
+}
+
+#resta{
+    right: 180px;
+}
+
+.input_comprar{
+    top: 440px;
+    border-color: #E91E63;
+    border-width: thin;
     border-radius: 5px;
-    color: black;
-    font-weight: bold;
-    font-size: 1em;
+    background-color: #E91E63;
+    color: white;
     cursor: pointer;
     overflow: hidden;
 }
 
-.lbl_cantidad{
-    width: 200px;
-    height: 30px;
-    position: fixed;
-    right: 250px;
-    top: 410px;
-    background-color: white;
-    border-radius: 5px;
-    font-size: 20px;
-    font-weight: bold;
-    color: black;
-}
 
 
 

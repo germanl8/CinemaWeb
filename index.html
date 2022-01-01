@@ -72,14 +72,13 @@
 
         <!--compras-->
         <form id="compras">
+
+            <section id="compras">
             <div id="button">
                 <input type="submit" id="shop" class="btn_compras btn_shop" value="Shop">
                 <input type="submit" id="snacks" class="btn_compras btn_snacks" value="Snacks">
-                <input type="submit" id="entradas" class="btn_compras btn_entradas" value="Entradas">
-            </div>
-        </form>
-
-        <form action="#" id="formpeliculas">
+                <input type="submit" id="entradas" class="btn_compras btn_entradas" value="Entradas" style="background-color: #E91E63;">
+            </div>relativaad
 
             <select name="Pelicula" id="addpelicula" class="entradas input_pelicula">  
                 <option value="default">¡Elige tu película!</option>
@@ -90,7 +89,7 @@
 
             <br><br>
 
-            <select name="Cine" id="addcine" class="entradas input_cine">
+            <select name="Cine" id="addcine" class="entradas input_cine" disabled>
                 <option value="default">¡Elige tu cine!</option>
                 <option value="montevideo">Cinema Montevideo</option>
                 <option value="portones">Cinema Portones</option>
@@ -100,7 +99,7 @@
 
             <br><br>
 
-            <select name="fecha" id="addfecha" class="entradas input_dia">
+            <select name="fecha" id="addfecha" class="entradas input_dia" disabled>
                 <option value="default">¡Elige el día!</option>
                 <option value="14_12_21">Lunes 14 diciembre</option>
                 <option value="15_12_21">Martes 15 diciembre</option>
@@ -109,25 +108,39 @@
 
             <br><br>
 
-            <select name="hora" id="addhora" class="entradas input_hora">
+            <select name="hora" id="addhora" class="entradas input_hora" disabled>
                 <option value="default">¡Elige la hora!</option>
                 <option value="1800">18hrs</option>
                 <option value="2000">20hrs</option>
                 <option value="2200">22hrs</option>
             </select>
 
-       
-         <!--Slider
-         <div id="slider">
-            <div class="bxslider">
-                <div><img src="img/green.jpg" title="green"></div>
-                <div><img src="img/red.jpg" title="red"></div>
-                <div><img src="img/blue.jpg" title="blue"></div>
-              </div>
-        </div>
+            <select name="hora" id="addhora" class="entradas input_formadepago" disabled>
+                <option value="default">Forma de pago</option>
+                <option value="1800">opcion1</option>
+                <option value="2000">opcion2</option>
+            </select>
 
-        -->
+            <label for="cantidad" class="entradas lbl_cantidad">¿Cuantas entradas?</label>
+            <input type="text" name="tickets" id="cantidad" class="entradas input_cantidad" value="1"/>
+            <button id="suma" class="entradas">+</button>
+            <button id="resta" class=" entradas">-</button>
 
+            <input type="submit" id="input_comprar" class="entradas input_comprar" value="Comprar"></input>
+
+            </section>
+        </form>
+
+        <form id="cartelera">
+            <div class="clearfix"></div>
+            <div id="cabecera_cartelera">
+                <span>Cartelera</span>
+
+            </div>
+            
+
+
+        </form>
 
 
         
