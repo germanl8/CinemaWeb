@@ -25,116 +25,101 @@
 
     <body>
 
-        <header>
-            <nav>
-                <div id="transparency"></div>
-                <section id="nav_header">
-                    <ul>
-                        <li><a href="">
-                            <span class="bar"></span>
-                            <span class="bar"></span>
-                            <span class="bar"></span>
-                        </a></li>
-                        <li><a id="cinem" href="#">cinem</a></li>
-                        <li><img class="logo" src="/img/logo.png"></li>
-                        <li><a id="login" href="">Iniciar sesión</a></li>
-                        <li><a id="active" href="">Activar cuenta</a></li>
-                    </ul>
-                </section>
+        <div id="contenido_superior">
 
-                    </ul>
-                </section>
-
-
-                    </ul>
-                    
-                </section>
-
-
-            </nav>
-        </header>
-
-
-        <!--Slider-->
-        <div class="slider-frame">
-            <div class="slide-images">
-                <div class="img-container">
-                    <img src="img/movie1.png" alt="">
-                </div>
-                <div class="img-container">
-                    <img src="img/movie2.png" alt="">
-                </div>
-                <div class="img-container">
-                    <img src="img/movie3.png" alt="">
-                </div>
-            </div>
-        </div>
-
-        <!--compras-->
-        <form id="compras">
+            <header>
+                <nav>
+                    <div id="transparency"></div>
+                    <section id="nav_header">
+                        <ul>
+                            <li><a href="">
+                                <span class="bar"></span>
+                                <span class="bar"></span>
+                                <span class="bar"></span>
+                            </a></li>
+                            <li><a id="cinem" href="#">cinem</a></li>
+                            <li><img class="logo" src="/img/logo.png"></li>
+                            <li><a id="login" href="">Iniciar sesión</a></li>
+                            <li><a id="active" href="">Activar cuenta</a></li>
+                        </ul>
+                    </section>
+                </nav>
+            </header>
 
             <section id="compras">
-            <div id="button">
-                <input type="submit" id="shop" class="btn_compras btn_shop" value="Shop">
-                <input type="submit" id="snacks" class="btn_compras btn_snacks" value="Snacks">
-                <input type="submit" id="entradas" class="btn_compras btn_entradas" value="Entradas" style="background-color: #E91E63;">
-            </div>relativaad
 
-            <select name="Pelicula" id="addpelicula" class="entradas input_pelicula">  
-                <option value="default">¡Elige tu película!</option>
-                <option value="El rey Leon">El rey León</option>
-                <option value="Avatar">Avatar</option>
-                <option value="Mision Imposible">Mision Imposible</option>
-            </select>
+                <!--Slider-->
+                <div class="slider-frame">
+                    <div class="slide-images">
+                        <div class="img-container">
+                            <img src="img/movie1.png" alt="">
+                        </div>
+                        <div class="img-container">
+                            <img src="img/movie2.png" alt="">
+                        </div>
+                        <div class="img-container">
+                            <img src="img/movie3.png" alt="">
+                        </div>
+                    </div>
+                </div>
 
-            <br><br>
+                <!--compras-->
+                <div id="menu" class="clearfix">
+                    
+                    <input type="submit" id="shop" class="btn_compras btn_shop" value="Shop">
+                    <input type="submit" id="snacks" class="btn_compras btn_snacks" value="Snacks">
+                    <input type="submit" id="entradas" class="btn_compras btn_entradas" value="Entradas" style="background-color: #E91E63;">
+                    <select name="Pelicula" id="addpelicula" class="input_entradas input_pelicula">  
+                        <option value="default">¡Elige tu película!</option>
+                        <option value="El rey Leon">El rey León</option>
+                        <option value="Avatar">Avatar</option>
+                        <option value="Mision Imposible">Mision Imposible</option>
+                    </select>
 
-            <select name="Cine" id="addcine" class="entradas input_cine" disabled>
-                <option value="default">¡Elige tu cine!</option>
-                <option value="montevideo">Cinema Montevideo</option>
-                <option value="portones">Cinema Portones</option>
-                <option value="ptacarretas">Cinema Punta Carretas</option>
-            </select>
+                    <select name="Cine" id="addcine" class="input_entradas input_cine" disabled>
+                        <option value="default">¡Elige tu cine!</option>
+                        <option value="montevideo">Cinema Montevideo</option>
+                        <option value="portones">Cinema Portones</option>
+                        <option value="ptacarretas">Cinema Punta Carretas</option>
+                    </select>
 
+                    <select name="fecha" id="addfecha" class="input_entradas input_dia" disabled>
+                        <option value="default">¡Elige el día!</option>
+                        <option value="14_12_21">Lunes 14 diciembre</option>
+                        <option value="15_12_21">Martes 15 diciembre</option>
+                        <option value="16_12_21">Miercoles 16 diciembre</option>
+                    </select>
 
-            <br><br>
+                    <select name="hora" id="addhora" class="input_entradas input_hora" disabled>
+                        <option value="default">¡Elige la hora!</option>
+                        <option value="1800">18hrs</option>
+                        <option value="2000">20hrs</option>
+                        <option value="2200">22hrs</option>
+                    </select>
 
-            <select name="fecha" id="addfecha" class="entradas input_dia" disabled>
-                <option value="default">¡Elige el día!</option>
-                <option value="14_12_21">Lunes 14 diciembre</option>
-                <option value="15_12_21">Martes 15 diciembre</option>
-                <option value="16_12_21">Miercoles 16 diciembre</option>
-            </select>
+                    <select name="hora" id="addhora" class="input_entradas input_formadepago" disabled>
+                        <option value="default">Forma de pago</option>
+                        <option value="1800">opcion1</option>
+                        <option value="2000">opcion2</option>
+                    </select>
 
-            <br><br>
+                    <label for="cantidad" class="input_entradas lbl_cantidad">¿Cuantas entradas?</label>
+                    <input type="text" name="tickets" id="cantidad" class="input_entradas input_cantidad" value="1"/>
+                    <button id="suma" class="input_entradas">+</button>
+                    <button id="resta" class="input_entradas">-</button>
 
-            <select name="hora" id="addhora" class="entradas input_hora" disabled>
-                <option value="default">¡Elige la hora!</option>
-                <option value="1800">18hrs</option>
-                <option value="2000">20hrs</option>
-                <option value="2200">22hrs</option>
-            </select>
+                    <input type="submit" id="input_comprar" class="input_entradas input_comprar" value="Comprar"></input>
 
-            <select name="hora" id="addhora" class="entradas input_formadepago" disabled>
-                <option value="default">Forma de pago</option>
-                <option value="1800">opcion1</option>
-                <option value="2000">opcion2</option>
-            </select>
-
-            <label for="cantidad" class="entradas lbl_cantidad">¿Cuantas entradas?</label>
-            <input type="text" name="tickets" id="cantidad" class="entradas input_cantidad" value="1"/>
-            <button id="suma" class="entradas">+</button>
-            <button id="resta" class=" entradas">-</button>
-
-            <input type="submit" id="input_comprar" class="entradas input_comprar" value="Comprar"></input>
+                </div>
 
             </section>
-        </form>
+        </div>
+
 
         <form id="cartelera">
-            <div class="clearfix"></div>
             <div id="cabecera_cartelera">
-                <span>Cartelera</span>
+                <hr>
+                <span id="cartelera">Cartelera</span>
 
             </div>
             
