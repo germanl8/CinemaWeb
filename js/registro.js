@@ -3,40 +3,52 @@
 
 window.addEventListener("load", function(){
 
-    
+    var sesion = 0;
+        if (localStorage.getItem("sesion") == null){ //corrobora sesion activa.
+        // alert("Debe iniciar sesión para comprar una entrada");
+        // localStorage.setItem("contador",contador); // si efectivamente no hay nada entonces guarda el primer valor en el localstorage, con key contador y el valor 0
+        }
+
+
+        var id_user = 0;
+        if (localStorage.getItem("id_user") == null){ //corrobora si no hay nada ingresado en el local storage, o sea si es el primer registro.
+            localStorage.setItem("id_user",id_user); // si efectivamente no hay nada entonces guarda el primer valor en el localstorage, con key contador y el valor 0
+        }
+
+
     $("#form_reg").submit(function () { 
+
+        id_user = localStorage.getItem("id_user");
+        id_user ++;
+        localStorage.setItem("id_user",id_user);
+
         var mail = $("#input_mail").val();
         var name = $("#input_name").val();
         var surname = $("#input_surname").val();
         var newpasswd = $("#input_newpasswd").val();
         var repasswd = $("#input_repasswd").val();
 
+     
+
         if(newpasswd == repasswd){
 
-            localStorage.setItem("input_mail", mail);
-            localStorage.setItem("input_name", name);
-            localStorage.setItem("input_surname", surname);
-            localStorage.setItem("input_newpasswd", newpasswd);
+            var user = [
+                {mail, name, surname, newpasswd},
+
+            ];
+
+            localStorage.setItem(id_user, JSON.stringify(user));
+            alert("Usuario creado con Exito!");
+
+            
 
         }else alert("Las contraseñas no coinciden");
 
+        window.close();
+
       });
     
-        var name = localStorage.getItem("name");
-        if(name != null && name != "undefined"){
-          var about_p = $("#about p");
-    
-          about_p.html("<strong>Bienvenido, "+name+"</strong>");
-          about_p.append("<a href='#' id='logout'> Cerrar Sesión</a>");
-    
-          $("#login").hide();
-          $("#about hr").show();
-          $("#logout").click(function () { 
-            localStorage.clear();
-            location.reload();
-            
-          });
-        }
+        
 /*
 
     var form_reg_ = document.querySelector("#form_reg");
