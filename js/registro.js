@@ -3,24 +3,36 @@
 
 window.addEventListener("load", function(){
 
-    var sesion = 0;
-        if (localStorage.getItem("sesion") == null){ //corrobora sesion activa.
-        // alert("Debe iniciar sesión para comprar una entrada");
-        // localStorage.setItem("contador",contador); // si efectivamente no hay nada entonces guarda el primer valor en el localstorage, con key contador y el valor 0
-        }
 
-
-        var id_user = 0;
+    var id_user = 0;
         if (localStorage.getItem("id_user") == null){ //corrobora si no hay nada ingresado en el local storage, o sea si es el primer registro.
             localStorage.setItem("id_user",id_user); // si efectivamente no hay nada entonces guarda el primer valor en el localstorage, con key contador y el valor 0
-        }
+        }else 
+            id_user ++;
+            localStorage.setItem()
 
+
+    function search_users(){
+
+        var alength = localStorage.length;
+        for (var i=alength; i>0; i){
+            var search_user = localStorage.getItem(i);
+            alert("dentro del for");
+            
+            console.log("valor indice:" +i+ "datos:"+search_user);
+
+            i--;
+
+        };
+
+    }
+   
+    
 
     $("#form_reg").submit(function () { 
 
-        id_user = localStorage.getItem("id_user");
-        id_user ++;
-        localStorage.setItem("id_user",id_user);
+        //search_users();
+
 
         var mail = $("#input_mail").val();
         var name = $("#input_name").val();
@@ -28,7 +40,7 @@ window.addEventListener("load", function(){
         var newpasswd = $("#input_newpasswd").val();
         var repasswd = $("#input_repasswd").val();
 
-     
+        
 
         if(newpasswd == repasswd){
 
@@ -44,9 +56,9 @@ window.addEventListener("load", function(){
 
         }else alert("Las contraseñas no coinciden");
 
-        window.close();
 
-      });
+    });
+      
     
         
 /*
