@@ -3,36 +3,14 @@
 
 window.addEventListener("load", function(){
 
+    
 
     var id_user = 0;
         if (localStorage.getItem("id_user") == null){ //corrobora si no hay nada ingresado en el local storage, o sea si es el primer registro.
-            localStorage.setItem("id_user",id_user); // si efectivamente no hay nada entonces guarda el primer valor en el localstorage, con key contador y el valor 0
-        }else 
-            id_user ++;
-            localStorage.setItem()
-
-
-    function search_users(){
-
-        var alength = localStorage.length;
-        for (var i=alength; i>0; i){
-            var search_user = localStorage.getItem(i);
-            alert("dentro del for");
-            
-            console.log("valor indice:" +i+ "datos:"+search_user);
-
-            i--;
-
-        };
-
-    }
+            localStorage.setItem("id_user",id_user); // si efectivamente no hay nada entonces guarda el primer valor en el localstorage, con key id_user y el valor 0
+        }
    
-    
-
     $("#form_reg").submit(function () { 
-
-        //search_users();
-
 
         var mail = $("#input_mail").val();
         var name = $("#input_name").val();
@@ -40,14 +18,46 @@ window.addEventListener("load", function(){
         var newpasswd = $("#input_newpasswd").val();
         var repasswd = $("#input_repasswd").val();
 
+        var alength = localStorage.length -1;
+        var mail_existe = 0;
+        //while(mail_existe = 0){
+            for (var i=alength; i>0; i){
+                var search_user = localStorage.getItem(i);
+                var string_user = JSON.parse(search_user);
+                alert("entro al for")
+                console.log(mail_existe);
+                console.log("mail usuario existente:"+string_user.mail);
+                console.log("mail del usuario a ingresar:" +mail);
+            
+                if(string_user.mail == mail){
+                    alert("mail existe");
+                    break;
+                    
+                }
+                i--;
+                
+            };
+        //}
+
+        
+
+
+        id_user = localStorage.getItem("id_user");
+        id_user ++;
+        localStorage.setItem("id_user",id_user);
+
         
 
         if(newpasswd == repasswd){
 
-            var user = [
-                {mail, name, surname, newpasswd},
+            var user = {
+                mail:  mail,
+                name: name, 
+                surname: surname, 
+                newpasswd: newpasswd
+            };
 
-            ];
+            
 
             localStorage.setItem(id_user, JSON.stringify(user));
             alert("Usuario creado con Exito!");
