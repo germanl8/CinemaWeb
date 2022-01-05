@@ -17,10 +17,9 @@ window.addEventListener("load", function(){
         var surname = $("#input_surname").val();
         var newpasswd = $("#input_newpasswd").val();
         var repasswd = $("#input_repasswd").val();
+    
 
         var alength = localStorage.length -1;
-        var mail_existe = 0;
-        //while(mail_existe = 0){
             for (var i=alength; i>0; i){
                 var search_user = localStorage.getItem(i);
                 var string_user = JSON.parse(search_user);
@@ -30,18 +29,44 @@ window.addEventListener("load", function(){
                 console.log("mail del usuario a ingresar:" +mail);
             
                 if(string_user.mail == mail){
-                    alert("mail existe");
-                    break;
+                    var mail_existe = 1;
                     
-                }
+                }else mail_existe = 0;
                 i--;
                 
             };
         //}
 
         
+        if(mail_existe != 1){
 
+            id_user = localStorage.getItem("id_user");
+            id_user ++;
+            localStorage.setItem("id_user",id_user);
 
+            
+
+            if(newpasswd == repasswd){
+
+                var user = {
+                    mail:  mail,
+                    name: name, 
+                    surname: surname, 
+                    newpasswd: newpasswd
+                };
+
+                
+
+                localStorage.setItem(id_user, JSON.stringify(user));
+                alert("Usuario creado con Exito!");
+
+                
+
+            }else alert("Las contraseñas no coinciden");
+
+        }else alert("mail existe");
+
+        /*
         id_user = localStorage.getItem("id_user");
         id_user ++;
         localStorage.setItem("id_user",id_user);
@@ -65,7 +90,7 @@ window.addEventListener("load", function(){
             
 
         }else alert("Las contraseñas no coinciden");
-
+*/
 
     });
       
