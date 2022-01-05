@@ -30,6 +30,7 @@ window.addEventListener("load", function(){
             
                 if(string_user.mail == mail){
                     var mail_existe = 1;
+                    break;
                     
                 }else mail_existe = 0;
                 i--;
