@@ -17,114 +17,51 @@ window.addEventListener("load", function(){
         var surname = $("#input_surname").val();
         var newpasswd = $("#input_newpasswd").val();
         var repasswd = $("#input_repasswd").val();
-    
 
-        var alength = localStorage.length -1;
+        //!----si newpasswd y repasswd son diferentes
+
+        if(newpasswd != repasswd){
+            alert("Las contraseñas no coinciden");
+        }else{
+
+            var alength = localStorage.length -1;
+
+            //!----recorre el localstorage-----
+
             for (var i=alength; i>0; i){
                 var search_user = localStorage.getItem(i);
                 var string_user = JSON.parse(search_user);
-                alert("entro al for")
-                console.log(mail_existe);
-                console.log("mail usuario existente:"+string_user.mail);
-                console.log("mail del usuario a ingresar:" +mail);
-            
-                if(string_user.mail == mail){
-                    var mail_existe = 1;
-                    break;
-                    
-                }else mail_existe = 0;
-                i--;
-                
+
+                    if(string_user.mail == mail){
+                        var mail_existe = 1;
+                        break;
+                        
+                    }else mail_existe = 0;
+                    i--;    
             };
-        //}
 
-        
-        if(mail_existe != 1){
+            //!----si el mail no existe en el localstorage, guarda usuario-----
 
-            id_user = localStorage.getItem("id_user");
-            id_user ++;
-            localStorage.setItem("id_user",id_user);
+            if(mail_existe != 1){
 
-            
-
-            if(newpasswd == repasswd){
-
+                id_user = localStorage.getItem("id_user");
+                id_user ++;
+                localStorage.setItem("id_user",id_user); //+1 en id_user
                 var user = {
                     mail:  mail,
                     name: name, 
                     surname: surname, 
                     newpasswd: newpasswd
                 };
-
-                
-
                 localStorage.setItem(id_user, JSON.stringify(user));
                 alert("Usuario creado con Exito!");
 
-                
-
-            }else alert("Las contraseñas no coinciden");
-
-        }else alert("mail existe");
-
-        /*
-        id_user = localStorage.getItem("id_user");
-        id_user ++;
-        localStorage.setItem("id_user",id_user);
-
-        
-
-        if(newpasswd == repasswd){
-
-            var user = {
-                mail:  mail,
-                name: name, 
-                surname: surname, 
-                newpasswd: newpasswd
-            };
-
-            
-
-            localStorage.setItem(id_user, JSON.stringify(user));
-            alert("Usuario creado con Exito!");
-
-            
-
-        }else alert("Las contraseñas no coinciden");
-*/
+            }else alert("mail existe");
+        };
 
     });
-      
-    
-        
-/*
-
-    var form_reg_ = document.querySelector("#form_reg");
-
-    form_reg_.addEventListener("submit", function(){
-
-        var mail = document.querySelector("#input_mail");
-        var name = document.querySelector("#input_name");
-        var surname = document.querySelector("#input_surname");
-        var passwd = document.querySelector("#input_passwd");
-        
-        alert(usuario);
-        
-        
-        if(localStorage.getItem(mail) == null){
-
-            var usuario = [
-                {name, surname, passwd,},
-            ];
-            
-
-        localStorage.setItem(mail, JSON.stringify(usuario));
 
 
-
-        }
-
-    }); */
 
 });
 
