@@ -17,37 +17,58 @@ window.addEventListener("load", function(){
 
 
 
-    var mail = $("#input_mail").val();
-    var passwd = $("#input_passwd").val();
+    
 
-    var autentication = document.querySelector("#btnlogin");
+    var formautentication_ = document.querySelector("#formautentication");
 
-    autentication.addEventListener(`submit`, function(){
+    formautentication_.addEventListener(`submit`, function(){
+
+        console.log("dentro de la funcion");
+        var mail = $("#input_mail").val();
+        var passwd = $("#input_passwd").val();
+        var string_user;
+        var mail_existe = 0;
 
         var alength = localStorage.length -1;
         for (var i=alength; i>0; i){
             var search_user = localStorage.getItem(i);
-            var string_user = JSON.parse(search_user);
+            string_user = JSON.parse(search_user);
+            console.log("entro al for");
 
                 if(string_user.mail == mail){
-                    var mail_existe = 1;
-                    console.log("dentro del if de mail");
-                    break;
-                    
-                }else mail_existe = 0;
-                i--;    
-        };
+                    alert("dentro del if de mail");
+                    console.log("paswwd del string"+string_user.newpasswd+"password:"+passwd);
+                    mail_existe = 1;
 
-        if(mail_existe != 0 ){ //!si mail existe en localstorage, chequea contraseña
+                    if(string_user.newpasswd == passwd){
+                        console.log(string_user);
+                       
+                        alert("inicio de sesion ok");
+                        
+                    }else alert("Contraseña equivocada");
+
+                    break;
+                
+                }
+
+                i--;
+        };
+        if(mail_existe != 1){
+            alert("mail no existe");
+        }
+        
+
+        /*if(mail_existe != 0 ){ //!si mail existe en localstorage, chequea contraseña
 
             if(string_user.newpasswd == passwd){
+                console.log(string_user);
                 var passwd_ok = 1;
                 alert("inicio de sesion ok");
                 
             }else passwd_ok = 0; alert("Contraseña equivocada");
 
 
-        }
+        }*/
 
     });
 
