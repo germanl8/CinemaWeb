@@ -58,6 +58,12 @@ body{
     clear: both;
 }
 
+.login{
+    float: right;
+    right: 30px;
+    top: 15px;
+}
+
 .logo{
     position: fixed;
     top: 10px;
@@ -77,10 +83,10 @@ body{
     font-size: 14px;
 }
 
-#active{
+.activar{
     position: absolute;
     float: right;
-    right: 10px;
+    right: 20px;
     margin-left: 30px;
     margin-right: 30px;
     top: 20px;

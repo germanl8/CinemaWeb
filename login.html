@@ -3,8 +3,11 @@
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" href="css/style_login.css">
+        <link rel="stylesheet" href="css/style_reg.css">
         <Title>Login</Title>
         <script type="text/javascript" src="js/login.js"></script>
+        <!--<script type="text/javascript" src="js/registro.js"></script>
+        -->
 
         <!--jquery-->
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -18,25 +21,53 @@
             <h1><center>CINEMA</center></h1>
         </div>
 
-<!--------------------atentication----------------------->
+        <div id="div_autentication" show>
+
+            <form action="#" id="formautentication">
             
-        <form action="#" id="formautentication">
-         
+            
+                <label for="mail" class="label" >Mail:</label><br>
+                <input type="text" id="input_mail_login" class="input"><br><br>
+                <label for="passwd" class="label">Password:</label><br>
+                <input type="password" id="input_passwd"><br><br><br>
+
+                <input type="submit" id="btnlogin" class="btn_login" value="Ingresar"><br><br>
+
+            </form>
+                <button type="submit" id="btnregistrar" class="btn_reg">Registrarme</button>
+
+        </div>
+
         
-            <label for="mail" class="label" >Mail:</label><br>
-            <input type="text" id="input_mail" class="input"><br><br>
-            <label for="passwd" class="label">Password:</label><br>
-            <input type="password" id="input_passwd"><br><br><br>
+        <div id="div_registrar" hidden>
 
-            <input type="submit" id="btnlogin" class="btn_login" value="Ingresar"><br><br>
+            <center>
+                <form id="form_reg" class="form_registrarme">
+        
+                        
+                        <h2><label for="registrarme" class="titleregistrarme">REGISTRARME</label></h2>
+                        
+                        <input type="mail" name="mail" id="input_mail" placeholder="Ingrese el mail"><br><br> 
+                        <input type="text" id="input_name" placeholder="Ingrese el nombre"><br>
+                        <input type="text" id="input_surname" placeholder="Ingrese el apellido"><br>
+                        <input type="password" id="input_newpasswd" placeholder="Ingrese la contraseña"><br>
+                        <input type="password" id="input_repasswd" placeholder="Ingrese nuevamente la contraseña"><br>
+                        <p style="color:white">Estoy de acuerdo con <a href="#">Terminos y condiciones</a></p>
+                        <button id="registrarme" class="btn_registrarme" type="submit">Registrarme</button>
+                        <p><a style="color:white" href="#">¿Ya tengo una cuenta?</a></p>
+                    
+        
+                </form>
+        
+            
+            </center>
 
-        </form>
-<!--------------------------registrar--------------------->
 
-        <form action="#" id="formregistrarme">
-            <button type="submit" id="btnregistrar" class="btn_reg">Registrarme</button>
+        </div>
 
-        </form>
+       
+
+
 
     </body>
 </HTML>

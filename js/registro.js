@@ -3,14 +3,16 @@
 
 window.addEventListener("load", function(){
 
-    
+    $("#form_reg").val("");
+
+ 
 
     var id_user = 0;
         if (localStorage.getItem("id_user") == null){ //corrobora si no hay nada ingresado en el local storage, o sea si es el primer registro.
             localStorage.setItem("id_user",id_user); // si efectivamente no hay nada entonces guarda el primer valor en el localstorage, con key id_user y el valor 0
         }
    
-    $("#form_reg").submit(function () { 
+    $("#form_reg").submit(function (e) { 
 
         var mail = $("#input_mail").val();
         var name = $("#input_name").val();
@@ -51,12 +53,23 @@ window.addEventListener("load", function(){
                     mail:  mail,
                     name: name, 
                     surname: surname, 
-                    newpasswd: newpasswd
+                    newpasswd: newpasswd,
+                    active: "1",
+                    id: id_user
                 };
                 localStorage.setItem(id_user, JSON.stringify(user));
                 alert("Usuario creado con Exito!");
+                window.close();
+                
 
-            }else alert("mail existe");
+
+            }else{
+                e.preventDefault();
+                var error_input_mail = $("#input_mail");
+                error_input_mail.css("color", "red");
+                error_input_mail.attr("placeholder", "Email no disponible");
+            }
+
         };
 
     });
