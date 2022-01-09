@@ -4,11 +4,11 @@ window.addEventListener("load", function(){
 
 
    
-    var config_window = "width=600,height=450,resizable=no,titlebar=no,scrollbars=no";
+    
    
     
     $("#login").click(function () { 
-        
+        var config_window = "width=600,height=450,resizable=no,titlebar=no,scrollbars=no";
         window.open("login.html", "Login", config_window);
         
     });
@@ -36,8 +36,8 @@ window.addEventListener("load", function(){
         $("#login").hide();
         $("#activar").hide();
         var encabezado = $("#encabezado");
-        encabezado.append(`<li><a class="activar">`+user_active.name+ " " +user_active.surname+`</a></li>`);
-        encabezado.append(`<li><a id="salir" href="" class="activar" style="margin-right: 140px;">Salir</a></li>`);
+        encabezado.append(`<li><a class="user">Bienvenido/a: `+user_active.name+ " " +user_active.surname+`</a></li>`);
+        encabezado.append(`<li><a id="salir" href="" class="activar">Salir</a></li>`);
     };
 
         

@@ -27,7 +27,7 @@
             
             
                 <label for="mail" class="label" >Mail:</label><br>
-                <input type="text" id="input_mail_login" class="input"><br><br>
+                <input type="email" id="input_mail_login" class="input" required inputmode="email"><br><br>
                 <label for="passwd" class="label">Password:</label><br>
                 <input type="password" id="input_passwd"><br><br><br>
 
@@ -47,14 +47,14 @@
                         
                         <h2><label for="registrarme" class="titleregistrarme">REGISTRARME</label></h2>
                         
-                        <input type="mail" name="mail" id="input_mail" placeholder="Ingrese el mail"><br><br> 
-                        <input type="text" id="input_name" placeholder="Ingrese el nombre"><br>
-                        <input type="text" id="input_surname" placeholder="Ingrese el apellido"><br>
-                        <input type="password" id="input_newpasswd" placeholder="Ingrese la contraseña"><br>
-                        <input type="password" id="input_repasswd" placeholder="Ingrese nuevamente la contraseña"><br>
+                        <input type="email" name="mail" id="input_mail" placeholder="Ingrese el email" required inputmode="email"><br><br> 
+                        <input type="text" id="input_name" placeholder="Ingrese el nombre"required minlength="2"><br>
+                        <input type="text" id="input_surname" placeholder="Ingrese el apellido"required minlength="2"><br>
+                        <input type="password" id="input_newpasswd" placeholder="Ingrese la contraseña"required minlength="8" inputmode="verbatim"><br>
+                        <input type="password" id="input_repasswd" placeholder="Ingrese nuevamente la contraseña"required><br>
                         <p style="color:white">Estoy de acuerdo con <a href="#">Terminos y condiciones</a></p>
                         <button id="registrarme" class="btn_registrarme" type="submit">Registrarme</button>
-                        <p><a style="color:white" href="#">¿Ya tengo una cuenta?</a></p>
+                        <p><a id="volver_login" style="color:white" href="#">¿Ya tengo una cuenta?</a></p>
                     
         
                 </form>

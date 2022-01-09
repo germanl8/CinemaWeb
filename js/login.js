@@ -86,6 +86,8 @@ window.addEventListener("load", function(){
         var newpasswd = $("#input_newpasswd").val();
         var repasswd = $("#input_repasswd").val();
 
+
+
         //!----si newpasswd y repasswd son diferentes
 
         if(newpasswd != repasswd){
@@ -140,6 +142,12 @@ window.addEventListener("load", function(){
 
         };
 
+    });
+
+    $("#volver_login").click(function () { 
+        var config_window = "width=600,height=450,resizable=no,titlebar=no,scrollbars=no";
+        window.open("login.html", "Login", config_window);
+        
     });
 
 });
