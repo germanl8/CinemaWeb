@@ -3,7 +3,12 @@
 
 window.addEventListener("load", function(){
 
-    //----------link--registro-----------
+    $("#cinem").click(function () { 
+        window.reload();
+        
+    });
+
+    //!----------link--registro-----------
 
    
     
@@ -32,14 +37,17 @@ window.addEventListener("load", function(){
             console.log("entro al for");
 
                 if(string_user.mail == mail){
-                    alert("dentro del if de mail");
+                   
                     console.log("paswwd del string"+string_user.newpasswd+"password:"+passwd);
                     mail_existe = 1;
+                    var user_active = string_user;
 
                     if(string_user.newpasswd == passwd){
                         console.log(string_user);
-                       
-                        alert("inicio de sesion ok");
+                        user_active.active = 1;
+                        localStorage.setItem(user_active.id, JSON.stringify(user_active));
+                        window.opener.location.reload();
+                        window.close();
                         
                     }else alert("Contraseña equivocada");
 
@@ -53,6 +61,7 @@ window.addEventListener("load", function(){
             alert("mail no existe");
         }
         
+ 
 
      
 
@@ -83,10 +92,11 @@ window.addEventListener("load", function(){
             alert("Las contraseñas no coinciden");
         }else{
 
-            var alength = localStorage.length -1;
+            
 
             //!----recorre el localstorage-----
-
+    
+            var alength = localStorage.length -1;
             for (var i=alength; i>0; i){
                 var search_user = localStorage.getItem(i);
                 var string_user = JSON.parse(search_user);
@@ -116,6 +126,7 @@ window.addEventListener("load", function(){
                 };
                 localStorage.setItem(id_user, JSON.stringify(user));
                 alert("Usuario creado con Exito!");
+                window.opener.location.reload();
                 window.close();
                 
 
@@ -130,7 +141,5 @@ window.addEventListener("load", function(){
         };
 
     });
-
-
 
 });
