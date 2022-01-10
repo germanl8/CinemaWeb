@@ -2,10 +2,48 @@
 
 window.addEventListener("load", function(){
 
+     //? funciones---------------------------------------------
 
+     //! habilitacion de inputs de compra
+     function habilitar_input_entradas(input1, input2){
+        input1.click(function(){
+            if(input1.val() != `default`){
+                input2.prop("disabled", false);
+            }else input2.prop(`disabled`, true);
+        });    
+    }
+
+    //! Chequeo si usuario es activo --- texto de error 
+
+    function active_user(){
+        if(active == 0){
+            console.log("no hay usuario iniciado");
+            window.open("login.html", "Login", config_window);
+        
+            $("#mensaje").css("display", "");
+           
+            
+            
+        }
+    }
+    
+
+
+
+
+    //?--------------------------------------------------------
+
+
+
+
+
+
+
+
+    var config_window = "width=600,height=450,resizable=no,titlebar=no,scrollbars=no";
     
     $("#login").click(function () { 
-        var config_window = "width=600,height=450,resizable=no,titlebar=no,scrollbars=no";
+        
         window.open("login.html", "Login", config_window);
         
     });
@@ -60,24 +98,16 @@ window.addEventListener("load", function(){
     var input_comprar = $("#input_comprar");
     
 
-    function habilitar_input_entradas(input1, input2){
-        input1.click(function(){
-            if(input1.val() != `default`){
-                input2.prop("disabled", false);
-            }else input2.prop(`disabled`, true);
-        });    
-    }
-
     habilitar_input_entradas(add_pelicula, add_cine);
     habilitar_input_entradas(add_cine, add_fecha);
     habilitar_input_entradas(add_fecha, add_hora);
     habilitar_input_entradas(add_hora, add_pago);      
-    habilitar_input_entradas(add_pago, input_comprar);
+    //habilitar_input_entradas(add_pago, input_comprar);
     
     $("#input_comprar").click(function (e) { 
         e.preventDefault();
-        console.log("click en comprar");
-        
+        active_user("Debe iniciar sesión para realizar la compra");
+    
     });
         
         

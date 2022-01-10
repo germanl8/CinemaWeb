@@ -62,3 +62,13 @@ body{
     width: 100%;
     border-color: #FFCC00;
 }
+
+#mensaje{
+    background-color: #E91E63; 
+    color: white; 
+    font-weight: bold; 
+    height: 40px; 
+    text-align: center; 
+    bottom: -60px; 
+    position: relative;
+}
