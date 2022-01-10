@@ -18,11 +18,9 @@ window.addEventListener("load", function(){
     function active_user(){
         if(active == 0){
             console.log("no hay usuario iniciado");
+            alert("Debe iniciar sesion para realizar la compra!");
             window.open("login.html", "Login", config_window);
-        
             $("#mensaje").css("display", "");
-           
-            
             
         }
     }
@@ -96,6 +94,12 @@ window.addEventListener("load", function(){
     var add_hora = $("#addhora");
     var add_pago = $("#addpago");
     var input_comprar = $("#input_comprar");
+
+    var buy_pelicula = $("#addpelicula option:selected").val();
+    var buy_cine = $("#addcine").val();
+    var buy_fecha = $("#addfecha").val();
+    var buy_hora = $("#addhora").val();
+    var buy_pago = $("#addpago").val();
     
 
     habilitar_input_entradas(add_pelicula, add_cine);
@@ -106,15 +110,24 @@ window.addEventListener("load", function(){
     
     $("#input_comprar").click(function (e) { 
         e.preventDefault();
-        active_user("Debe iniciar sesión para realizar la compra");
-    
+
+        var movie_buy_ticket = {
+            movie:  buy_pelicula,
+            cine: buy_cine, 
+            fecha: buy_fecha, 
+            hora: buy_hora,
+            pago: buy_pago,
+            id: user_active.id,
+            user_name: user_active.name,
+            user_surname: user_active.surname
+        }; 
+
+        console.log(movie_buy_ticket);
+        active_user();
+        
     });
         
-        
-
-    
-    
-
+     
 
 
 });
