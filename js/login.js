@@ -71,8 +71,6 @@ window.addEventListener("load", function(){
 
     $("#form_reg").val("");
 
- 
-
     var id_user = 0;
         if (localStorage.getItem("id_user") == null){ //corrobora si no hay nada ingresado en el local storage, o sea si es el primer registro.
             localStorage.setItem("id_user",id_user); // si efectivamente no hay nada entonces guarda el primer valor en el localstorage, con key id_user y el valor 0
@@ -95,7 +93,6 @@ window.addEventListener("load", function(){
         }else{
 
             
-
             //!----recorre el localstorage-----
     
             var alength = localStorage.length -1;

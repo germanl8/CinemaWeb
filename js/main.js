@@ -3,9 +3,6 @@
 window.addEventListener("load", function(){
 
 
-   
-    
-   
     
     $("#login").click(function () { 
         var config_window = "width=600,height=450,resizable=no,titlebar=no,scrollbars=no";
@@ -14,7 +11,7 @@ window.addEventListener("load", function(){
     });
 
    
-
+    //!----users------
       
 
     var active = 0;
@@ -22,12 +19,14 @@ window.addEventListener("load", function(){
     for (var i=alength; i>0; i){
         var search_user = localStorage.getItem(i);
         var string_user = JSON.parse(search_user);
+        console.log(string_user);
+        console.log(search_user);
 
             if(string_user.active == 1){
                 active = 1;
                 var user_active = string_user;
                 break;
-            };
+            }
             i--;    
     };
 
@@ -50,6 +49,40 @@ window.addEventListener("load", function(){
         location.reload();
     });
 
+
+    //!-----movies------
+
+    var add_pelicula = $("#addpelicula");
+    var add_cine = $("#addcine");
+    var add_fecha = $("#addfecha");
+    var add_hora = $("#addhora");
+    var add_pago = $("#addpago");
+    var input_comprar = $("#input_comprar");
+    
+
+    function habilitar_input_entradas(input1, input2){
+        input1.click(function(){
+            if(input1.val() != `default`){
+                input2.prop("disabled", false);
+            }else input2.prop(`disabled`, true);
+        });    
+    }
+
+    habilitar_input_entradas(add_pelicula, add_cine);
+    habilitar_input_entradas(add_cine, add_fecha);
+    habilitar_input_entradas(add_fecha, add_hora);
+    habilitar_input_entradas(add_hora, add_pago);      
+    habilitar_input_entradas(add_pago, input_comprar);
+    
+    $("#input_comprar").click(function (e) { 
+        e.preventDefault();
+        console.log("click en comprar");
+        
+    });
+        
+        
+
+    
     
 
 
